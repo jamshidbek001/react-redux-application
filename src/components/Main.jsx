@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const Main = () => {
   const {articles,isLoading} = useSelector(state => state.article)
   const navigate = useNavigate()
+  
   return (
     <>
       {isLoading && <Loader />}
