@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 const Login = () => {
   const [email,setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const dispatch = useDispatch(state => state.auth)
+  const dispatch = useDispatch()
   const {isLoading,loggedIn} = useSelector(state => state.auth)
   const navigate = useNavigate()
 
