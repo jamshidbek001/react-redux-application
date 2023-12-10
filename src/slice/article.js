@@ -31,11 +31,22 @@ export const articleSlice = createSlice({
         },
         getArticleDetailFailure: (state,action) => {
             state.isLoading = false
+        },
+        postArticleStart: state => {
+            state.isLoading = true
+        },
+        postArticleSuccess: state => {
+            state.isLoading = false
+        },
+        postArticleFailure: state => {
+            state.isLoading = false
+            state.error = 'Error'
         }
     }
 })
 
 export const {getArticleSuccess,getArticlesStart,getArticleFailure,
-    getArticleDetailStart,getArticleDetailSuccess,getArticleDetailFailure} = articleSlice.actions
+    getArticleDetailStart,getArticleDetailSuccess,getArticleDetailFailure,
+    postArticleStart,postArticleSuccess,postArticleFailure} = articleSlice.actions
     
 export default articleSlice.reducer
