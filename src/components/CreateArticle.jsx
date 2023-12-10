@@ -19,11 +19,8 @@ const CreateArticle = () => {
         dispatch(postArticleStart())
         
         try {
-            const response = await ArticleServie.postArticle(article)
-            const arr = [...articles,response.article]
-            console.log(arr)
+            await ArticleServie.postArticle(article)
             dispatch(postArticleSuccess())
-            dispatch(getArticleSuccess(arr))
             navigate('/')
         } catch (error) {
             dispatch(postArticleFailure())
