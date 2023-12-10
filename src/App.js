@@ -5,6 +5,7 @@ import AuthService from './services/auth'
 import { useDispatch } from 'react-redux'
 import { signUserSuccess } from './slice/auth'
 import { getItem } from './helpers/persistance-storage'
+import EditArticle from './components/EditArticle'
 
 const App = () => {
   const dispatch = useDispatch()
@@ -34,6 +35,7 @@ const App = () => {
           <Route path='/register' element={<Register />} />
           <Route path='/article/:slug' element={<ArticleDetail />} />
           <Route path='/create-article' element={<CreateArticle />}/>
+          <Route path='/edit-article/:slug' element={<EditArticle />} />
         </Routes>
       </div>
     </div>
